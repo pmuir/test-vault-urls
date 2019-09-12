@@ -1,0 +1,80 @@
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-h4r7c[0m
+{"level":"warn","ts":1568299971.1394613,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568299971.1404321,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-qbhqf[0m
+{"level":"warn","ts":1568299972.3104832,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1568299972.4265413,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/test-vault-urls\""}
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-pmuir-test-vault-urls-master-re-jc29q[0m
+{"level":"warn","ts":1568299980.5365448,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568299982.290467,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/pmuir/test-vault-urls.git @ v0.0.2 in path /workspace/source"}
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:c8d4dbe038e9ffd7a9a724c1cef5c00ee568ffea
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/test-vault-urls main.go
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/test-vault-urls"]              
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2019/09/12 14:53:34 pushed blob: sha256:5e37c5994a9c0236c8102d64f75baf8714248a9ffe7fc2a8860ccc1bbdd20845
+2019/09/12 14:53:34 pushed blob: sha256:f50607979e7ff91b49da434cbba982403dc86c258a2daf869a1488c493961c5d
+2019/09/12 14:53:36 gcr.io/apps-dev-229310/test-vault-urls:0.0.2: digest: sha256:f02da88c10e2d946b6666d052c2ec5da5a8f8d19e6c17e29b2648e8bc75b7c3e size: 428
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/test-vault-urls to an unshallow repository
+Generating change log from git ref c08b1bff0ce1a69f315a9ab785691c7cee1e86f1 => 744ef03392f4f02074674600338c62c42022f561
+Associating user x-0 in users.jenkins.io with email pmuir@bleepbleep.org.uk to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit c8d4dbe038e9ffd7a9a724c1cef5c00ee568ffea with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for pmuir/test-vault-urls and tag v0.0.2 so creating a new release
+Updated the release information at https://github.com/pmuir/test-vault-urls/releases/tag/v0.0.2
+generated: /workspace/source/charts/test-vault-urls/templates/release.yaml
+Created Release test-vault-urls-0-0-2 resource in namespace **
+Updating PipelineActivity pmuir-test-vault-urls-master-4 with version 0.0.2
+Updated PipelineActivities pmuir-test-vault-urls-master-4 with release notes URL: https://github.com/pmuir/test-vault-urls/releases/tag/v0.0.2
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file test-vault-urls-0.0.2.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-4[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app test-vault-urls version 0.0.2 to namespace **-staging
+Created Pull Request: https://github.com/muirp/environment-giversulpher-staging/pull/2
+Pull Request https://github.com/muirp/environment-giversulpher-staging/pull/2 is merged at sha ba1b23327a31ad91c2a740b344bbc7d8034f5cb5
+Pull Request merged but we are not waiting for the update pipeline to complete!
