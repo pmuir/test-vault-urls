@@ -38,3 +38,4 @@ readinessProbe:
   periodSeconds: 10
   successThreshold: 1
   timeoutSeconds: 1
+username: vault:mysecrets/secret1:username
