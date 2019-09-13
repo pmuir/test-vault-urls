@@ -1,0 +1,83 @@
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-j49ds[0m
+{"level":"warn","ts":1568368482.5323677,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568368482.5332575,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-dnf8w[0m
+{"level":"warn","ts":1568368483.5280216,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1568368483.530484,"logger":"fallback-logger","caller":"bash/main.go:65","msg":"Successfully executed command \"mkdir -p /workspace/source /workspace/source/charts/test-vault-urls\""}
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-pmuir-test-vault-urls-master-re-vqf89[0m
+{"level":"warn","ts":1568368489.5642831,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/master\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1568368490.6385925,"logger":"fallback-logger","caller":"git/git.go:102","msg":"Successfully cloned https://github.com/pmuir/test-vault-urls.git @ v0.0.3 in path /workspace/source"}
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:9304155d229cf1a15e02731832e6ca73884dd252
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/test-vault-urls main.go
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0000] Taking snapshot of full filesystem...        
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/test-vault-urls"]              
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] Using files from context: [/workspace/source/bin] 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Taking snapshot of files...                  
+2019/09/13 09:55:04 pushed blob: sha256:8aecb8fbe5b676a7ce4514f45119128621bd9771677dd53fa4b0f5780e5143ce
+2019/09/13 09:55:04 pushed blob: sha256:5a4d5d417941a13f838513af6af79d9664fd94e3760655240e70b6d2b0e0c5f4
+2019/09/13 09:55:06 gcr.io/apps-dev-229310/test-vault-urls:0.0.3: digest: sha256:1cebb2337fe9094ffbf862b43f9c301bec0da1f87245e6c7d685036abe592ad9 size: 428
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/test-vault-urls to an unshallow repository
+Generating change log from git ref 744ef03392f4f02074674600338c62c42022f561 => 28f6ddd502242409fe67065277725a930f2c798d
+Associating user x-0 in users.jenkins.io with email pmuir@bleepbleep.org.uk to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 9304155d229cf1a15e02731832e6ca73884dd252 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email pmuir@bleepbleep.org.uk to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 9304155d229cf1a15e02731832e6ca73884dd252 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for pmuir/test-vault-urls and tag v0.0.3 so creating a new release
+Updated the release information at https://github.com/pmuir/test-vault-urls/releases/tag/v0.0.3
+generated: /workspace/source/charts/test-vault-urls/templates/release.yaml
+Created Release test-vault-urls-0-0-3 resource in namespace **
+Updating PipelineActivity pmuir-test-vault-urls-master-5 with version 0.0.3
+Updated PipelineActivities pmuir-test-vault-urls-master-5 with release notes URL: https://github.com/pmuir/test-vault-urls/releases/tag/v0.0.3
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file test-vault-urls-0.0.3.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mpmuir-test-vault-urls-master-re-hc975-5[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+Promoting app test-vault-urls version 0.0.3 to namespace **-staging
+Created Pull Request: https://github.com/muirp/environment-giversulpher-staging/pull/3
+Pull Request https://github.com/muirp/environment-giversulpher-staging/pull/3 is merged at sha 39d75be33909ae5b591405ed473fea46ca53b21d
+Pull Request merged but we are not waiting for the update pipeline to complete!
